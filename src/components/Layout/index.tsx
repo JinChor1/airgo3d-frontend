@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Layout, Grid } from "antd"
 import Sidebar from "../Sidebar"
 import TopBar from "../TopBar"
@@ -10,7 +10,7 @@ const useBreakpoint = Grid.useBreakpoint
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const screens = useBreakpoint()
-    const [collapsed, setCollapsed] = React.useState(false)
+    const [collapsed, setCollapsed] = useState(false)
     const darkMode = useSelector((s: RootState) => s.theme.darkMode)
 
     useEffect(() => {

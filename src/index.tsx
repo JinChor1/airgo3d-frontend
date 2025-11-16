@@ -1,5 +1,15 @@
 import "./styles/index.css"
+import 'antd/dist/reset.css'
 import * as React from "react"
-import * as ReactDOM from "react-dom"
+import { createRoot } from "react-dom/client"
+import { Provider } from "react-redux"
+import { store } from "./store"
+import App from "./App"
 
-ReactDOM.render(<div>Welcome</div>, document.getElementById("root"))
+const container = document.getElementById("root") as HTMLElement
+const root = createRoot(container)
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+)

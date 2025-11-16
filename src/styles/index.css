@@ -1,5 +1,174 @@
-html
-body {
+html, body, #root {
   height: 100%;
   width: 100%;
+  margin: 0;
+}
+
+.ant-layout {
+  background: #f0f2f5;
+}
+
+/* small tweak to ensure sider looks good */
+.ant-layout-sider {
+  background: #fff;
+}
+
+/* dark theme overrides */
+.dark-theme {
+  --bg: #0f1720;
+  --panel: #111827;
+  --text: #e5e7eb;
+}
+
+.dark-theme .ant-layout {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.dark-theme .ant-layout-sider {
+  background: var(--panel) !important;
+  color: var(--text) !important;
+}
+
+.dark-theme .ant-layout-header {
+  background: transparent !important;
+  color: var(--text) !important;
+}
+
+.dark-theme .ant-card {
+  background: #0b1220 !important;
+  color: var(--text) !important;
+  border-color: rgba(255,255,255,0.06);
+}
+
+/* Card titles and Statistic values in dark mode */
+.dark-theme .ant-card .ant-card-head-title,
+.dark-theme .ant-card .ant-card-head .ant-card-head-title {
+  color: var(--text) !important;
+}
+
+.dark-theme .ant-statistic-title,
+.dark-theme .ant-statistic-content .ant-statistic-content-value {
+  color: var(--text) !important;
+}
+
+/* Statistic prefix/suffix should match text color in dark mode */
+.dark-theme .ant-statistic-prefix,
+.dark-theme .ant-statistic-suffix,
+.dark-theme .ant-statistic-content-prefix,
+.dark-theme .ant-statistic-content-suffix {
+  color: var(--text) !important;
+}
+
+/* also ensure the value's unit and group separator inherit color */
+.dark-theme .ant-statistic-content-value,
+.dark-theme .ant-statistic-content-value > span {
+  color: var(--text) !important;
+}
+
+/* ensure card subtitles / body text also contrast */
+.dark-theme .ant-card-body,
+.dark-theme .ant-card .ant-typography,
+.dark-theme .ant-card p {
+  color: rgba(229,231,235,0.92) !important;
+}
+
+.dark-theme .ant-menu-dark, .dark-theme .ant-menu-dark .ant-menu-selected {
+  background: transparent;
+}
+
+/* make icons, menu item icons and button/text icons visible in dark theme */
+.dark-theme .anticon,
+.dark-theme .ant-menu-item-icon,
+.dark-theme .ant-btn .anticon,
+.dark-theme .ant-btn-text,
+.dark-theme .ant-menu-item,
+.dark-theme .ant-menu-item a {
+  color: var(--text) !important;
+  fill: currentColor !important;
+}
+
+/* ensure menu items use the text color */
+.dark-theme .ant-menu {
+  background: transparent;
+  color: var(--text) !important;
+}
+
+/* selected/active menu item styling for dark theme */
+.dark-theme .ant-menu-item-selected,
+.dark-theme .ant-menu-item-active,
+.dark-theme .ant-menu-submenu-selected {
+  background: rgba(255,255,255,0.06) !important; /* subtle highlight instead of white */
+  color: var(--text) !important;
+}
+
+.dark-theme .ant-menu-item-selected > a,
+.dark-theme .ant-menu-item-active > a {
+  color: var(--text) !important;
+}
+
+/* ensure icon color inside selected item follows text color */
+.dark-theme .ant-menu-item-selected .ant-menu-item-icon,
+.dark-theme .ant-menu-item-active .ant-menu-item-icon {
+  color: var(--text) !important;
+  fill: currentColor !important;
+}
+
+/* remove the default white underline/after indicator */
+.dark-theme .ant-menu-item::after {
+  background: transparent !important;
+}
+
+/* avatar contrast */
+.dark-theme .ant-avatar {
+  background: rgba(255,255,255,0.06) !important;
+  color: var(--text) !important;
+}
+
+/* header button text/icon color */
+.dark-theme .ant-layout-header .ant-btn,
+.dark-theme .ant-layout-header .ant-btn * {
+  color: var(--text) !important;
+}
+
+/* Table styles for dark theme */
+.dark-theme .ant-table {
+  background: transparent;
+  color: var(--text) !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+.dark-theme .ant-table-container,
+.dark-theme .ant-table-content {
+  background: transparent !important;
+}
+
+.dark-theme .ant-table-thead > tr > th {
+  background: transparent !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.dark-theme .ant-table-tbody > tr > td {
+  background: transparent !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+.dark-theme .ant-table-tbody > tr:hover > td {
+  background: rgba(255,255,255,0.02) !important;
+}
+
+.dark-theme .ant-table-pagination,
+.dark-theme .ant-pagination,
+.dark-theme .ant-table-wrapper .ant-pagination {
+  color: var(--text) !important;
+}
+
+/* make table action buttons and icons visible */
+.dark-theme .ant-table .ant-btn,
+.dark-theme .ant-table .ant-btn *,
+.dark-theme .ant-table .anticon {
+  color: var(--text) !important;
+  fill: currentColor !important;
 }

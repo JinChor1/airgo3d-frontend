@@ -144,6 +144,7 @@ html, body, #root {
 }
 
 .dark-theme .ant-table-thead > tr > th {
+  transition: none !important;
   background: transparent !important;
   color: var(--text) !important;
   border-bottom: 1px solid rgba(255,255,255,0.06) !important;
@@ -152,6 +153,7 @@ html, body, #root {
 .dark-theme .ant-table-tbody > tr > td {
   background: transparent !important;
   color: var(--text) !important;
+  transition: none !important;
   border-bottom: 1px solid rgba(255,255,255,0.04) !important;
 }
 

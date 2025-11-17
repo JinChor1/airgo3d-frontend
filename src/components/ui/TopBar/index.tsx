@@ -2,7 +2,7 @@ import React from "react"
 import { Layout, Button, Avatar, Space } from "antd"
 import { MenuFoldOutlined, MenuUnfoldOutlined, BulbOutlined } from "@ant-design/icons"
 import { useDispatch } from "react-redux"
-import { toggleDark } from "../../store/themeSlice"
+import { toggleDark } from "../../../store/themeSlice"
 
 const { Header } = Layout
 

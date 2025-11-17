@@ -10,15 +10,15 @@ export default function TopBar({ collapsed, onToggle }: { collapsed: boolean; on
     const dispatch = useDispatch()
 
     return (
-        <Header 
-            style={{ 
-                padding: "0 16px", 
-                background: "#fff", 
-                display: "flex", 
-                alignItems: "center", 
-                justifyContent: "space-between", 
-                boxShadow: "0 1px 4px rgba(0,0,0,0.08)" 
-            }}
+        <Header
+          style={{
+            padding: "0 16px",
+            background: "#fff",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.08)"
+          }}
         >
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <Button type="text" onClick={onToggle} icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />} />

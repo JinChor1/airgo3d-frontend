@@ -1,8 +1,18 @@
 import React from "react"
-import { Row, Col, Card, Statistic, Table, Button, Space, Tag } from "antd"
+import {
+  Row,
+  Col,
+  Card,
+  Statistic,
+  Table,
+  Button,
+  Space,
+  Tag
+} from "antd"
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons"
 import type { ColumnsType } from "antd/es/table"
 import type { Breakpoint as AntdBreakpoint } from "antd/es/_util/responsiveObserver"
+import TinyArea from "components/Charts/TinyArea"
 
 type Item = { key: number; name: string; status: string; amount: string; date: string }
 
@@ -40,25 +50,32 @@ export default function Dashboard() {
         <div>
             <Row gutter={[16, 16]}>
                 <Col xs={24} sm={12} lg={6}>
-                    <Card><Statistic title="Users" value={1128} /></Card>
+                    <Card
+                      style={{
+                        overflow: "hidden"
+                      }}
+                    >
+                      <Statistic title="Total Uploaded (Active)" value={1128} />
+                      <TinyArea data={[10, 20, 15, 30, 25, 40, 35, 50, 45, 60, 55, 70]} />
+                    </Card>
                 </Col>
                 <Col xs={24} sm={12} lg={6}>
-                    <Card><Statistic title="Orders" value={93} /></Card>
+                    <Card><Statistic title="Total Bookmarked" value={93} /></Card>
                 </Col>
                 <Col xs={24} sm={12} lg={6}>
-                    <Card><Statistic title="Revenue" value={12432} prefix="$" /></Card>
+                    <Card><Statistic title="Total Unbookmarked" value={12432}/></Card>
                 </Col>
                 <Col xs={24} sm={12} lg={6}>
-                    <Card><Statistic title="Active" value={24} suffix="%" /></Card>
+                    <Card><Statistic title="Inactive Panoramas" value={24}/></Card>
                 </Col>
             </Row>
 
             <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
                 <Col xs={24} lg={16}>
-                    <Card title="Main Chart" style={{ minHeight: 240 }}>Chart placeholder</Card>
+                    <Card title="Uploaded Panoramas" style={{ minHeight: 240 }}>Chart placeholder</Card>
                 </Col>
                 <Col xs={24} lg={8}>
-                    <Card title="Recent" style={{ minHeight: 240 }}>
+                    <Card title="Bookmarks" style={{ minHeight: 240 }}>
                         Recent items
                     </Card>
                 </Col>
@@ -66,7 +83,7 @@ export default function Dashboard() {
 
             <Row style={{ marginTop: 16 }}>
                 <Col xs={24}>
-                    <Card title="Items" bordered>
+                    <Card title="Panorama images">
                         <Table<Item>
                             columns={columns}
                             dataSource={sampleData}

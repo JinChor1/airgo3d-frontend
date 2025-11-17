@@ -8,13 +8,16 @@
     "build": "rimraf ./build && mkdir ./build && webpack --profile --progress --config ./webpack/webpack.prod.js"
   },
   "dependencies": {
+    "@ant-design/charts": "^2.6.6",
     "@ant-design/icons": "5.x",
     "@reduxjs/toolkit": "^2.10.1",
+    "@types/three": "^0.181.0",
     "antd": "^5.28.1",
     "react": "18",
     "react-dom": "18",
     "react-redux": "^9.2.0",
-    "styled-components": "^6.1.19"
+    "styled-components": "^6.1.19",
+    "three": "^0.181.1"
   },
   "devDependencies": {
     "@types/react": "18",

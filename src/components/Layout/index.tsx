@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Layout, Grid } from "antd"
-import Sidebar from "../Sidebar"
-import TopBar from "../TopBar"
+import Sidebar from "../ui/Sidebar"
+import TopBar from "../ui/TopBar"
 import { useSelector } from "react-redux"
 import { RootState } from "../../store"
 

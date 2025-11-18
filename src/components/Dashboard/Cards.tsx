@@ -9,20 +9,20 @@ import TinyArea from "components/ui/Charts/TinyArea"
 import useApi from "hooks/useApi"
 
 export default function Cards() {
-    const { data } = useApi<{ 
-        total: number; 
-        bookmarked: number; 
-        unbookmarked: number; 
-        inactive: number 
+    const { data } = useApi<{
+        total: number;
+        bookmarked: number;
+        unbookmarked: number;
+        inactive: number
     }>('/api/panoramas/analytics/cards');
-    
+
     const { data: graphData } = useApi<{
-        totalUploaded: number[], 
+        totalUploaded: number[],
         totalBookmarked: number[],
         totalUnbookmarked: number[],
         totalInactive: number[]
     }>('/api/panoramas/analytics/daily-cards');
-    
+
     return(
         <Row gutter={[16, 16]}>
             <Col xs={24} sm={12} lg={6}>

@@ -1,15 +1,20 @@
-import React, { useEffect, useRef } from 'react'
+import { Button } from 'antd'
+import React, {
+  useEffect,
+  useRef
+} from 'react'
 import * as THREE from 'three'
 
 export default function PanoramaViewer(): JSX.Element {
   const containerRef = useRef<HTMLDivElement | null>(null)
+  const [ isResized, setIsResized ] = React.useState<boolean>(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const name = params.get('name')
     if (!name) return
 
-    const url = `http://localhost:3001/api/panoramas/file/${encodeURIComponent(name)}`
+    const url = `http://localhost:3001/api/panoramas/file/${encodeURIComponent(isResized ? 'lowquality-' + name : name)}`
 
     const container = containerRef.current
     if (!container) return
@@ -130,10 +135,16 @@ export default function PanoramaViewer(): JSX.Element {
         renderer.domElement.parentNode.removeChild(renderer.domElement)
       }
     }
-  }, [])
+  }, [isResized])
 
   return (
     <div style={{ height: '100vh', width: '100vw', background: '#000' }}>
+      <Button
+        style={{ position: 'absolute', top: 16, left: 16, zIndex: 1 }}
+        onClick={() => setIsResized(!isResized)}
+      >
+        Switch Quality
+      </Button>
       <div ref={containerRef} style={{ height: '100%', width: '100%' }} />
     </div>
   )

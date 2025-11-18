@@ -8,15 +8,24 @@
     "build": "rimraf ./build && mkdir ./build && webpack --profile --progress --config ./webpack/webpack.prod.js"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^6.1.19"
+    "@ant-design/charts": "^2.6.6",
+    "@ant-design/icons": "5.x",
+    "@reduxjs/toolkit": "^2.10.1",
+    "@types/three": "^0.181.0",
+    "antd": "^5.28.1",
+    "react": "18",
+    "react-dom": "18",
+    "react-redux": "^9.2.0",
+    "styled-components": "^6.1.19",
+    "three": "^0.181.1"
   },
   "devDependencies": {
-    "@types/react-dom": "^17.0.3",
+    "@types/react": "18",
+    "@types/react-dom": "18",
     "@types/styled-components": "^5.1.35",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
+    "add": "^2.0.6",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.35.2",
@@ -31,7 +40,8 @@
     "webpack": "5.76.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
-    "webpack-merge": "^5.10.0"
+    "webpack-merge": "^5.10.0",
+    "yarn": "^1.22.22"
   },
   "packageManager": "yarn@1.22.22"
 }

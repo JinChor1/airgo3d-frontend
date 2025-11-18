@@ -15,12 +15,12 @@ import {
     Upload,
     message,
 } from "antd"
-import { 
-    DeleteOutlined, 
-    EyeOutlined, 
-    FolderOpenOutlined, 
-    StarFilled, 
-    StarOutlined 
+import {
+    DeleteOutlined,
+    EyeOutlined,
+    FolderOpenOutlined,
+    StarFilled,
+    StarOutlined
 } from "@ant-design/icons"
 import type { ColumnsType } from "antd/es/table"
 import type { Breakpoint as AntdBreakpoint } from "antd/es/_util/responsiveObserver"
@@ -28,14 +28,14 @@ import type { RcFile } from 'antd/es/upload'
 import Datatable from "components/ui/Datatable"
 import useApi from "hooks/useApi"
 
-type Item = { 
-    key: number; 
-    name: string; 
-    filename: string; 
-    mimeType: string; 
-    size: string; 
-    bookmarked: boolean; 
-    isActive: boolean; 
+type Item = {
+    key: number;
+    name: string;
+    filename: string;
+    mimeType: string;
+    size: string;
+    bookmarked: boolean;
+    isActive: boolean;
     createdAt: string;
 }
 
@@ -92,14 +92,14 @@ export default function PanoramaTable() {
             align: "right",
             render: (_text: unknown, record: Item): JSX.Element => (
                 <Space>
-                    <Button 
-                        type="link" 
-                        icon={<EyeOutlined />} 
-                        onClick={() => window.open(`/panorama-viewer?name=${encodeURIComponent(record.name)}`, "_blank")} 
+                    <Button
+                        type="link"
+                        icon={<EyeOutlined />}
+                        onClick={() => window.open(`/panorama-viewer?name=${encodeURIComponent(record.name)}`, "_blank")}
                     />
-                    <Button 
-                        variant="link" 
-                        icon={record.bookmarked ? <StarFilled /> : <StarOutlined />} 
+                    <Button
+                        variant="link"
+                        icon={record.bookmarked ? <StarFilled /> : <StarOutlined />}
                         color="gold"
                         onClick={async () => {
                             try {
@@ -111,11 +111,11 @@ export default function PanoramaTable() {
                             }
                         }}
                     />
-                    <Button 
-                        type="link" 
-                        danger 
-                        icon={<DeleteOutlined />} 
-                        onClick={() => null} 
+                    <Button
+                        type="link"
+                        danger
+                        icon={<DeleteOutlined />}
+                        onClick={() => null}
                     />
                 </Space>
             ),
@@ -141,14 +141,14 @@ export default function PanoramaTable() {
             return
         }
 
-        const fm = new FormData()
-        fm.append('image', selectedFile)
+        const formData = new FormData()
+        formData.append('image', selectedFile)
 
         setUploading(true)
         try {
             const res = await fetch('http://localhost:3001/api/panoramas/upload', {
                 method: 'POST',
-                body: fm,
+                body: formData,
             })
 
             if (!res.ok) throw new Error('Upload failed')
@@ -165,7 +165,7 @@ export default function PanoramaTable() {
         }
     }
 
-    return ( 
+    return (
         <Row style={{ marginTop: 16 }}>
             <Col xs={24}>
                 <Card title="Panorama images">
